@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:t1_2021110077/cart_screen.dart';
 import 'package:t1_2021110077/home_screen.dart';
 
 void main() {
@@ -11,9 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 35, 147, 147)),
           useMaterial3: true,
         ),
         home: const Main());
@@ -39,29 +39,32 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flutter Demo')),
       body: IndexedStack(
         index: _selectedIndex,
-        children: const <Widget>[
-          HomeScreen(), //widget halaman
-          Text('Index 1: Dashboard'),
-          Text('Index 2: Notifications'),
-          Text('Index 3: Settings'),
+        children: <Widget>[
+          const HomeScreen(), //widget halaman
+          const Text('Index 1: Favorites'),
+          CartScreen(), //widget halaman
+          const Text('Index 3: profile'),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 244, 244, 244),
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
+            icon: Icon(Icons.grid_view),
+            label: ''
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.local_mall_outlined),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.person_outline),
             label: '',
           ),
         ],

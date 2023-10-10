@@ -108,10 +108,10 @@ class HomeScreen extends StatelessWidget {
       );
     }
     return Scaffold(
-      // appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
+      appBar: AppBar(
+        toolbarHeight: 80.0,
+        title: Container(
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -120,16 +120,16 @@ class HomeScreen extends StatelessWidget {
                   const Expanded(
                     flex: 3,
                     child: Text(
-                      'Vibe',
+                      'vibe',
                       style: TextStyle(
                         fontFamily: 'BebasNeue',
                         fontSize: 32,
                       ),
                     ),
-                  ),
+                    ),
                   Expanded(
-                    flex: 2,
-                    child: TextField(
+                      flex: 2,
+                      child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Search',
                         suffixIcon: IconButton(
@@ -141,9 +141,19 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
+                  )
                 ],
-              ),
+              )
+            ],
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
               const SizedBox(height: 16),
               cardMenu(
                 'WOMEN',
