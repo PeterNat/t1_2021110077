@@ -48,7 +48,7 @@ class ImageSlider extends StatefulWidget {
   const ImageSlider({super.key});
 
   @override
-  _ImageSliderState createState() => _ImageSliderState();
+  State<ImageSlider> createState() => _ImageSliderState();
 }
 
 class _ImageSliderState extends State<ImageSlider> {
@@ -251,7 +251,7 @@ class DetailProduct extends StatelessWidget {
             children: [
               ElevatedButton.icon(
                 icon: const Icon(
-                  Icons.shopping_bag,
+                  Icons.shopping_bag_outlined,
                   color: Color.fromARGB(255, 33, 33, 33),
                   ),
                 label: const Text(''),

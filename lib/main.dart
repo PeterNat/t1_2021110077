@@ -41,11 +41,11 @@ class _MainState extends State<Main> {
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
-        children: <Widget>[
-          const HomeScreen(), //widget halaman
-          const Text('Index 1: Favorites'),
+        children: const <Widget>[
+          HomeScreen(), //widget halaman
+          Text('Index 1: Favorites'),
           CartScreen(), //widget halaman
-          const Text('Index 3: profile'),
+          Text('Index 3: profile'),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
